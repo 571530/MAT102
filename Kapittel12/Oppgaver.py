@@ -47,22 +47,5 @@ def oppgave5():
 		if txt.count('e') > 1:
 			print(txt)	
 
-def test():
-	txt = "uibpmuibqkaqauwzmncvbpivxzwoziuuqvo"
 
-	ref = frequencyOfString("macbeth.txt")
-
-	minX = compareFrequency(frequencyOfString("kode"), ref)
-	minTxt = "uibpmuibqkaqauwzmncvbpivxzwoziuuqvo"
-
-	for i in range(1, 26):
-		encrypt = caesar(txt, i)
-		freq = frequencyOfString("kode")
-		x = compareFrequency(freq, ref);
-		if (x < minX):
-			minX = x
-			minTxt = encrypt
-
-	print(minTxt)
-
-test()
+oppgave4()
