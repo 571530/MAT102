@@ -136,7 +136,9 @@ print("Determinantkoeffisient for kubisk", R2_kub) # -> 0.9335598634480327
 
 yplot = np.dot(a_kub, np.power(xplot,3)) + np.dot(b_kub, np.power(xplot,2)) + np.dot(c_kub, xplot) + d_kub
 
-plt.plot(xplot, yplot)  
+plt.plot(xplot, yplot)   
+
+plt.show()
 
 # d)
 
@@ -170,7 +172,8 @@ for txt, x, y in zip(Fylker, T[:,0], T[:,1]):
 plt.scatter(P[:,0], P[:,1])
 for txt, x, y in zip(Indikatorer, P[:,0], P[:,1]):
     plt.annotate(txt, xy = (x, y))
-    
+
+plt.show()
         
     
 # c)
@@ -178,7 +181,14 @@ for txt, x, y in zip(Indikatorer, P[:,0], P[:,1]):
 # Plotting av begge to heter biplot
 
 # d)
-    
-    
+list = []
+for i, p1 in enumerate(T):
+    for j, p2 in enumerate(T):
+        if i != j:
+            list.append((i, j, np.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2))) 
+list = sorted(list, key=lambda p: p[2])
+minstePar = list[0]
+print(Fylker[minstePar[0]], Fylker[minstePar[1]]) # Minste par -> Nord-Trøndelag Oppland 
+
 # e) Oslo
 
